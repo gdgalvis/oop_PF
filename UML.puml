@@ -1,0 +1,35 @@
+@startuml
+class Paleta {
+x: int
+y: int
+width: int
+heigh:int
+color: tuple  
+draw(display pantalla)
+mover(up: boolean)
+reseteo()
+}
+
+class Bola {
+x: int
+y: int
+radio: int
+x_vel: int
+y_vel: int
+color: tuple 
+draw(pantalla: display)
+mover()
+reseteo()
+
+
+}
+
+class Juego {
+draw(pantalla: display, paletas:lista, bola: Bola, Contador: int)
+choque(bola, paleta: Paleta)
+moverPaleta(keys: int, paletas:lista)
+}
+
+Juego *-- Bola
+Juego *-- Paleta
+@enduml

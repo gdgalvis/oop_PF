@@ -38,10 +38,10 @@ class Paleta:
 class Bola:
     Vel = 5
 
-    def __init__(self, x, y, radius,color):
+    def __init__(self, x, y, radio,color):
         self.x = self.original_x = x
         self.y = self.original_y = y
-        self.radius = radius
+        self.radio = radio
         self.x_vel = self.Vel
         self.y_vel = 0
         self.color = color
