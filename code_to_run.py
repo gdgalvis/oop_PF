@@ -1,5 +1,7 @@
 
 from betterpong import pygame, Paleta,Bola,Jugar
+from pygame.locals import *
+from pygame import mixer 
 pygame.init()
 Ancho =700
 Alto = 500
@@ -44,12 +46,20 @@ def main():
     P_Der = Paleta(Ancho - 10 - Pancho, Alto //2 - Paltura//2, Pancho, Paltura)
     bola = Bola(Ancho // 2, Alto // 2, Bradio)
 
+    #Paletas Secundarias
+    P_Izq1 = Paleta(225, Paltura//2, Pancho, Paltura//2)
+    P_Izq2 = Paleta(225, Alto- Paltura, Pancho, Paltura//2)
+    P_Der1 = Paleta(Ancho - 225 - Pancho, Paltura//2, Pancho, Paltura/2)
+    P_Der2 = Paleta(Ancho - 225 - Pancho, Alto- Paltura, Pancho, Paltura/2)
+
+
     Puntaje_Izq = 0
     Puntaje_Der = 0
 
+    Jugar.music("BG1.wav")
     while run:
         clock.tick(fps)
-        draw(Pantalla, [P_Izq, P_Der], bola, Puntaje_Izq, Puntaje_Der)
+        draw(Pantalla, [P_Izq, P_Der,P_Izq1, P_Der1,P_Izq2, P_Der2], bola, Puntaje_Izq, Puntaje_Der)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -57,10 +67,10 @@ def main():
                 break
 
         keys = pygame.key.get_pressed()
-        Jugar.moverPaleta(keys, P_Izq, P_Der)
+        Jugar.moverPaleta(keys, P_Izq, P_Der,P_Izq1, P_Der1,P_Izq2, P_Der2)
 
         bola.mover()
-        Jugar.choque(bola, P_Izq, P_Der)
+        Jugar.choque(bola, P_Izq, P_Der,P_Izq1, P_Der1,P_Izq2, P_Der2)
         
         
 

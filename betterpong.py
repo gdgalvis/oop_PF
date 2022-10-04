@@ -1,4 +1,4 @@
-import pygame 
+import pygame
 fps = 60
 blanco = (255, 255, 255)
 negro = (0, 0, 0)
@@ -55,7 +55,7 @@ class Bola:
         self.x_vel *= -1
 
 class Jugar:
-    def choque(ball, P_Izq, P_Der):
+    def choque(ball, P_Izq, P_Der, P_Izq1, P_Der1,P_Izq2, P_Der2):
         if ball.y + ball.radio >= Alto:
             ball.y_vel *= -1
         elif ball.y - ball.radio <= 0:
@@ -89,16 +89,36 @@ class Jugar:
                     ball.y_vel = -1 * y_vel
 
 
-    def moverPaleta(keys, P_Izq, P_Der):
+    def moverPaleta(keys, P_Izq, P_Der,P_Izq1, P_Der1,P_Izq2, P_Der2):
+        #Lado Izquierda
         if keys[pygame.K_w] and P_Izq.y - P_Izq.vel >= 0:
             P_Izq.mover(up=True)
         if keys[pygame.K_s] and P_Izq.y + P_Izq.vel + P_Izq.height <= Alto:
             P_Izq.mover(up=False)
+        if keys[pygame.K_a] and P_Izq1.y - P_Izq1.vel >= 0:
+            P_Izq1.mover(up=True)
+            P_Izq2.mover(up=True)
+        if keys[pygame.K_d] and P_Izq2.y + P_Izq2.vel + P_Izq2.height <= Alto:
+            P_Izq1.mover(up=False)
+            P_Izq2.mover(up=False)
 
+        #Lado Derecho
         if keys[pygame.K_UP] and P_Der.y - P_Der.vel >= 0:
             P_Der.mover(up=True)
         if keys[pygame.K_DOWN] and P_Der.y + P_Der.vel + P_Der.height <= Alto:
             P_Der.mover(up=False)
+        if keys[pygame.K_LEFT] and P_Der1.y - P_Der1.vel >= 0:
+            P_Der1.mover(up=True)
+            P_Der2.mover(up=True)
+        if keys[pygame.K_RIGHT] and P_Der2.y + P_Der2.vel + P_Der2.height <= Alto:
+            P_Der1.mover(up=False)
+            P_Der2.mover(up=False)
     
+
+    def music(song):
+        pygame.mixer.init()
+        pygame.mixer.music.load(song)
+        pygame.mixer.music.play(-1)
+
     def Puntaje(bola, P_Izq, P_Der,Puntaje_Izq,Puntaje_Der,Pantalla,Letra):
         pass
