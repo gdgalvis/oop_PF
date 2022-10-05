@@ -26,8 +26,9 @@ reseteo()
 
 class Juego {
 draw(pantalla: display, paletas:lista, bola: Bola, Contador: int)
-choque(bola, paleta: Paleta)
+choque(bola: Bola, P_Izq: Paleta, P_Der: Paleta, P_Izq1:Paleta, P_Der1: Paleta,P_Izq2: Paleta, P_Der2: Paleta)
 moverPaleta(keys: int, paletas:lista)
+music(song: str)
 }
 
 Juego *-- Bola
