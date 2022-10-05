@@ -55,38 +55,84 @@ class Bola:
         self.x_vel *= -1
 
 class Jugar:
-    def choque(ball, P_Izq, P_Der, P_Izq1, P_Der1,P_Izq2, P_Der2):
-        if ball.y + ball.radio >= Alto:
-            ball.y_vel *= -1
-        elif ball.y - ball.radio <= 0:
-            ball.y_vel *= -1
-        
-        if ball.x + ball.radio >= Ancho:
-            ball.x_vel *= -1
-        elif ball.x - ball.radio <= 0:
-            ball.x_vel *= -1
+    def choque(bola, P_Izq, P_Der, P_Izq1, P_Der1,P_Izq2, P_Der2):
 
-        if ball.x_vel < 0:
-            if ball.y >= P_Izq.y and ball.y <= P_Izq.y + P_Izq.height:
-                if ball.x - ball.radio <= P_Izq.x + P_Izq.width:
-                    ball.x_vel *= -1
+        #Maneja las colisiones con paredes
+        if bola.y + bola.radio >= Alto:
+            bola.y_vel *= -1
+        elif bola.y - bola.radio <= 0:
+            bola.y_vel *= -1
+        
+        if bola.x + bola.radio >= Ancho:
+            bola.x_vel *= -1
+        elif bola.x - bola.radio <= 0:
+            bola.x_vel *= -1
+
+        #Maneja las colisiones con paletas
+        if bola.x_vel < 0:
+            #Maneja las colisiones con Paleta Principal Izquierda
+            if bola.y >= P_Izq.y and bola.y <= P_Izq.y + P_Izq.height:
+                if bola.x - bola.radio <= P_Izq.x + P_Izq.width:
+                    bola.x_vel *= -1
 
                     middle_y = P_Izq.y + P_Izq.height / 2
-                    difference_in_y = middle_y - ball.y
-                    reduction_factor = (P_Izq.height / 2) / ball.Vel
+                    difference_in_y = middle_y - bola.y
+                    reduction_factor = (P_Izq.height / 2) / bola.Vel
                     y_vel = difference_in_y / reduction_factor
-                    ball.y_vel = -1 * y_vel
+                    bola.y_vel = -1 * y_vel
+            #Maneja las colisiones con Paleta Secundaria 1 Izquierda
+            if bola.y >= P_Izq1.y and bola.y <= P_Izq1.y + P_Izq1.height:
+                if bola.x - bola.radio <= P_Izq1.x + P_Izq1.width:
+                    bola.x_vel *= -1
+
+                    middle_y = P_Izq1.y + P_Izq1.height / 2
+                    difference_in_y = middle_y - bola.y
+                    reduction_factor = (P_Izq1.height / 2) / bola.Vel
+                    y_vel = difference_in_y / reduction_factor
+                    bola.y_vel = -1 * y_vel
+
+            #Maneja las colisiones con Paleta Secundaria 2 Izquierda
+            if bola.y >= P_Izq2.y and bola.y <= P_Izq2.y + P_Izq2.height:
+                if bola.x - bola.radio <= P_Izq2.x + P_Izq2.width:
+                    bola.x_vel *= -1
+
+                    middle_y = P_Izq2.y + P_Izq2.height / 2
+                    difference_in_y = middle_y - bola.y
+                    reduction_factor = (P_Izq2.height / 2) / bola.Vel
+                    y_vel = difference_in_y / reduction_factor
+                    bola.y_vel = -1 * y_vel
+
 
         else:
-            if ball.y >= P_Der.y and ball.y <= P_Der.y + P_Der.height:
-                if ball.x + ball.radio >= P_Der.x:
-                    ball.x_vel *= -1
-
+            #Maneja las colisiones con Paleta Principal Derecha
+            if bola.y >= P_Der.y and bola.y <= P_Der.y + P_Der.height:
+                if bola.x + bola.radio >= P_Der.x:
+                    bola.x_vel *= -1
                     middle_y = P_Der.y + P_Der.height / 2
-                    difference_in_y = middle_y - ball.y
-                    reduction_factor = (P_Der.height / 2) / ball.Vel
+                    difference_in_y = middle_y - bola.y
+                    reduction_factor = (P_Der.height / 2) / bola.Vel
                     y_vel = difference_in_y / reduction_factor
-                    ball.y_vel = -1 * y_vel
+                    bola.y_vel = -1 * y_vel
+
+            #Maneja las colisiones con Paleta Secundaria 1 Derecha
+            if bola.y >= P_Der1.y and bola.y <= P_Der1.y + P_Der1.height:
+                if bola.x + bola.radio >= P_Der1.x:
+                    bola.x_vel *= -1
+                    middle_y = P_Der1.y + P_Der1.height / 2
+                    difference_in_y = middle_y - bola.y
+                    reduction_factor = (P_Der1.height / 2) / bola.Vel
+                    y_vel = difference_in_y / reduction_factor
+                    bola.y_vel = -1 * y_vel
+
+            #Maneja las colisiones con Paleta Secundaria 2 Derecha
+            if bola.y >= P_Der2.y and bola.y <= P_Der2.y + P_Der2.height:
+                if bola.x + bola.radio >= P_Der2.x:
+                    bola.x_vel *= -1
+                    middle_y = P_Der2.y + P_Der2.height / 2
+                    difference_in_y = middle_y - bola.y
+                    reduction_factor = (P_Der2.height / 2) / bola.Vel
+                    y_vel = difference_in_y / reduction_factor
+                    bola.y_vel = -1 * y_vel
 
 
     def moverPaleta(keys, P_Izq, P_Der,P_Izq1, P_Der1,P_Izq2, P_Der2):
