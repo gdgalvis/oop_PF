@@ -166,5 +166,5 @@ class Jugar:
         pygame.mixer.music.load(song)
         pygame.mixer.music.play(-1)
 
-    def Puntaje(bola, P_Izq, P_Der,Puntaje_Izq,Puntaje_Der,Pantalla,Letra):
+    def Puntaje(bola, P_Izq, P_Der,Puntaje_Izq,Puntaje_Der,Pantalla,Letra,contador):
         pass
