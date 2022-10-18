@@ -71,8 +71,33 @@ def main():
 
         bola.mover()
         Jugar.choque(bola, P_Izq, P_Der,P_Izq1, P_Der1,P_Izq2, P_Der2)
-        
-        
+        if bola.x + bola.radio< 0:
+            Puntaje_Der += 1
+            bola.reseteo()
+        elif bola.x + bola.radio > Ancho:
+            Puntaje_Izq += 1
+            bola.reseteo()
+
+        ganar=10
+        won = False
+        if Puntaje_Izq >= ganar:
+            won = True
+            win_text = "GANO JUGADOR IZQ!"
+        elif Puntaje_Der >= ganar:
+            won = True
+            win_text = "GANO JUGADOR"
+
+        if won:
+            text = Letra.render(win_text, 1, blanco)
+            Pantalla.blit(text, (Ancho//2 - text.get_width() //
+                            2, Alto//2 - text.get_height()//2))
+            pygame.display.update()
+            pygame.time.delay(5000)
+            bola.reseteo()
+            P_Izq.reseteo()
+            P_Der.reseteo()
+            Puntaje_Izq = 0
+            Puntaje_Der = 0
 
     pygame.quit()
 

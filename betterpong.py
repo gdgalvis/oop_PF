@@ -63,10 +63,6 @@ class Jugar:
         elif bola.y - bola.radio <= 0:
             bola.y_vel *= -1
         
-        if bola.x + bola.radio >= Ancho:
-            bola.x_vel *= -1
-        elif bola.x - bola.radio <= 0:
-            bola.x_vel *= -1
 
         #Maneja las colisiones con paletas
         if bola.x_vel < 0:
@@ -165,6 +161,3 @@ class Jugar:
         pygame.mixer.init()
         pygame.mixer.music.load(song)
         pygame.mixer.music.play(-1)
-
-    def Puntaje(bola, P_Izq, P_Der,Puntaje_Izq,Puntaje_Der,Pantalla,Letra,contador):
-        pass
