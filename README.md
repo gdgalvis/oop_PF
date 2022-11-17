@@ -7,7 +7,11 @@ Primero se debe de ir al repositorio de github y despues:
 1. Dar click en Code.
 2. Dar click en Download ZIP.
 ## Como correr el codigo:
-
+Para correr el codigo se debe de extraer la carpeta del ZIP que se descargo anteriormente, despues de eso iremos a nuestro editor de codigo de Python
+![Captura de pantalla (300)](https://user-images.githubusercontent.com/110875651/202347192-03bd658d-5a8b-498d-9048-9b29f1c2066e.png)
+1.Dara click en "abrir carpeta".
+![Captura de pantalla (301)](https://user-images.githubusercontent.com/110875651/202347648-e87f2535-ecdc-40cf-a1be-eb3165b2d38d.png)
+Despues aparecera su administrador de archivos y se dirigira a descarga donde seleccionara la carpeta que extrajo anteriormente.
 ## UML
 
 ![UML](https://user-images.githubusercontent.com/73660713/194176525-2956ef8c-d255-44a8-ab9f-63894c60b21e.png)
