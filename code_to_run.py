@@ -7,6 +7,7 @@
 #You should have received a copy of the GNU General Public License along with Betterpong. If not, see <https://www.gnu.org/licenses/>.
 #«Copyright 2022 Diego Tornet, German Galvis»
 
+#Librerias importadas
 from betterpong import pygame, Paleta,Bola,Jugar
 from pygame.locals import *
 from pygame import mixer 
@@ -26,7 +27,7 @@ Bradio=7
 
 Letra = pygame.font.SysFont("comicsans", 50)
 ganar = 10
-
+#Dibuja los puntajes
 def draw(win, paddles, ball, left_score, right_score):
     win.fill(negro)
 
@@ -88,13 +89,14 @@ def main():
 
         ganar=10
         won = False
+        #Se selecciona el ganador
         if Puntaje_Izq >= ganar:
             won = True
-            win_text = "GANO JUGADOR IZQ!"
+            win_text = "GANO JUGADOR IZQUIERDA!"
         elif Puntaje_Der >= ganar:
             won = True
-            win_text = "GANO JUGADOR DER"
-
+            win_text = "GANO JUGADOR DERECHA!"
+       #Al ganar se reinicia el juego
         if won:
             text = Letra.render(win_text, 1, blanco)
             Pantalla.blit(text, (Ancho//2 - text.get_width() //
