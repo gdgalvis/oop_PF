@@ -8,6 +8,8 @@ Bradio=7
 Ancho =700
 Alto = 500
 #Clases
+
+#Crea la paletas
 class Paleta:
     vel=4
     def __init__(self, x, y, width, height,color=(255, 255, 255)):
@@ -16,21 +18,24 @@ class Paleta:
         self.width = width
         self.height = height
         self.color = color
-
+    
+    #Dibuja las paletas
     def draw(self, win):
         pygame.draw.rect(
             win, self.color, (self.x, self.y, self.width, self.height))
-
+    
     def mover(self, up=True):
         if up:
             self.y -= self.vel
         else:
             self.y += self.vel
-
+   
+    #Reinicia las paletas
     def reseteo(self):
         self.x = self.original_x
         self.y = self.original_y
 
+#Se crea la bola
 class Bola:
     Vel = 5
     def __init__(self, x, y, radio,color=(255, 255, 255)):
@@ -40,7 +45,8 @@ class Bola:
         self.x_vel = self.Vel
         self.y_vel = 0
         self.color = color
-
+    
+    #Dibuja la bola
     def draw(self, win):
         pygame.draw.circle(win, self.color, (self.x, self.y), self.radio)
 
@@ -48,12 +54,13 @@ class Bola:
         self.x += self.x_vel
         self.y += self.y_vel
 
+    #Reinicia la bola
     def reseteo(self):
         self.x = self.original_x
         self.y = self.original_y
         self.y_vel = 0
         self.x_vel *= -1
-
+#La clase que contiene juego
 class Jugar:
     def choque(bola, P_Izq, P_Der, P_Izq1, P_Der1,P_Izq2, P_Der2):
 
@@ -76,6 +83,7 @@ class Jugar:
                     reduction_factor = (P_Izq.height / 2) / bola.Vel
                     y_vel = difference_in_y / reduction_factor
                     bola.y_vel = -1 * y_vel
+                    
             #Maneja las colisiones con Paleta Secundaria 1 Izquierda
             if bola.y >= P_Izq1.y and bola.y <= P_Izq1.y + P_Izq1.height:
                 if bola.x - bola.radio <= P_Izq1.x + P_Izq1.width:
@@ -130,7 +138,7 @@ class Jugar:
                     y_vel = difference_in_y / reduction_factor
                     bola.y_vel = -1 * y_vel
 
-
+    #Mueve las paletas
     def moverPaleta(keys, P_Izq, P_Der,P_Izq1, P_Der1,P_Izq2, P_Der2):
         #Lado Izquierda
         if keys[pygame.K_w] and P_Izq.y - P_Izq.vel >= 0:
@@ -156,7 +164,7 @@ class Jugar:
             P_Der1.mover(up=False)
             P_Der2.mover(up=False)
     
-
+    #Musica del juego
     def music(song):
         pygame.mixer.init()
         pygame.mixer.music.load(song)
