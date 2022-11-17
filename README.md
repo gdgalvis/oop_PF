@@ -6,6 +6,8 @@ Primero se debe de ir al repositorio de github y despues:
 ![Captura de pantalla (299)](https://user-images.githubusercontent.com/110875651/202345046-aeaae2e5-108c-490e-832e-460b9e12e8d1.png)
 1. Dar click en Code.
 2. Dar click en Download ZIP.
+## Como correr el codigo:
+
 ## UML
 
 ![UML](https://user-images.githubusercontent.com/73660713/194176525-2956ef8c-d255-44a8-ab9f-63894c60b21e.png)
