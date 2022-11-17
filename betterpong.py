@@ -8,13 +8,7 @@
 #«Copyright 2022 Galvis German, Tornet Diego»
 
 import pygame
-fps = 60
-blanco = (255, 255, 255)
-negro = (0, 0, 0)
-Paltura=100
-Pancho=20
-Bradio=7
-Ancho =700
+
 Alto = 500
 #Clases
 
