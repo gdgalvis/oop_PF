@@ -50,7 +50,7 @@ def draw(win, paddles, ball, left_score, right_score):
 def main():
     run = True
     clock = pygame.time.Clock()
-
+    #Paletas principales y bola
     P_Izq = Paleta(10, Alto//2 - Paltura//2, Pancho, Paltura)
     P_Der = Paleta(Ancho - 10 - Pancho, Alto //2 - Paltura//2, Pancho, Paltura)
     bola = Bola(Ancho // 2, Alto // 2, Bradio)
@@ -61,7 +61,7 @@ def main():
     P_Der1 = Paleta(Ancho - 225 - Pancho, Paltura//2, Pancho, Paltura/2)
     P_Der2 = Paleta(Ancho - 225 - Pancho, Alto- Paltura, Pancho, Paltura/2)
 
-
+    #Puntaje inicial
     Puntaje_Izq = 0
     Puntaje_Der = 0
 
