@@ -27,7 +27,7 @@ Bradio=7
 
 Letra = pygame.font.SysFont("comicsans", 50)
 ganar = 10
-#Dibuja los puntajes
+#Dibuja todos los componentes de la pantalla
 def draw(win, paddles, ball, left_score, right_score):
     win.fill(negro)
 
@@ -46,7 +46,7 @@ def draw(win, paddles, ball, left_score, right_score):
 
 
 
-
+#Contiene todo el juego
 def main():
     run = True
     clock = pygame.time.Clock()
@@ -108,7 +108,7 @@ def main():
             P_Der.reseteo()
             Puntaje_Izq = 0
             Puntaje_Der = 0
-
+    #Sale del Juego
     pygame.quit()
 
 
