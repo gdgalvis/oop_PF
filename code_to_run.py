@@ -5,7 +5,7 @@
 #Betterpong is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 #You should have received a copy of the GNU General Public License along with Betterpong. If not, see <https://www.gnu.org/licenses/>.
-#«Copyright 2022 Galvis German, Tornet Diego»
+#«Copyright 2022 Diego Tornet, German Galvis»
 
 from betterpong import pygame, Paleta,Bola,Jugar
 from pygame.locals import *
