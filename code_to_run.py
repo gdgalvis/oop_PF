@@ -93,7 +93,7 @@ def main():
             win_text = "GANO JUGADOR IZQ!"
         elif Puntaje_Der >= ganar:
             won = True
-            win_text = "GANO JUGADOR"
+            win_text = "GANO JUGADOR DER"
 
         if won:
             text = Letra.render(win_text, 1, blanco)
